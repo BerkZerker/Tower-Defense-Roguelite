@@ -1,7 +1,7 @@
 class_name Enemy extends RigidBody2D
 
 
-@export var ACCELERATION: int = 2700
+@export var ACCELERATION: int = 2500
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
