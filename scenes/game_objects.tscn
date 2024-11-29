@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://0l2dqnmiyjw3"]
+
+[ext_resource type="PackedScene" uid="uid://dyj5a8a8s3sbt" path="res://scenes/torch.tscn" id="1_0j5ob"]
+[ext_resource type="PackedScene" uid="uid://sivhouktyyou" path="res://scenes/enemy_spawn.tscn" id="2_4hcro"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_maf7c"]
+scenes/1/scene = ExtResource("1_0j5ob")
+scenes/2/scene = ExtResource("2_4hcro")
+
+[sub_resource type="TileSet" id="TileSet_35gln"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetScenesCollectionSource_maf7c")
+
+[node name="GameObjects" type="TileMapLayer"]
+tile_set = SubResource("TileSet_35gln")

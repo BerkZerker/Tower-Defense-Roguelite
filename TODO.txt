@@ -1,0 +1,6 @@
+Bake the nav mesh on game start w script (for random terrrain in the future)
+Add placable defenders that roam a radius and attempt to attack enemies
+Make enemies target defenders when within a certain radius
+Touch controls (pan & zoom)
+List of placable defenders and placing within game
+Lighting

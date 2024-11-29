@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccmincf21h35d"]
+
+[ext_resource type="Texture2D" uid="uid://dj0821i5lb4ra" path="res://assets/textures/barrier-tile.png" id="1_uek1f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lv47g"]
+resource_name = "barrier"
+texture = ExtResource("1_uek1f")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k4kd4"]
+tile_size = Vector2i(64, 64)
+sources/2 = SubResource("TileSetAtlasSource_lv47g")
+
+[node name="Terrain" type="TileMapLayer"]
+tile_set = SubResource("TileSet_k4kd4")

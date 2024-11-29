@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=4 uid="uid://c65kdfyp3q3vl"]
+
+[ext_resource type="PackedScene" uid="uid://bxoussnxjqida" path="res://scenes/level.tscn" id="1_8beis"]
+[ext_resource type="PackedScene" uid="uid://0l2dqnmiyjw3" path="res://scenes/game_objects.tscn" id="2_5g1ck"]
+
+[node name="World" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("1_8beis")]
+
+[node name="GameObjects" parent="." instance=ExtResource("2_5g1ck")]
+tile_map_data = PackedByteArray("AAAjAAIAAQAAAAAAAQANAAQAAQAAAAAAAQARAAQAAQAAAAAAAQARAAgAAQAAAAAAAQANAAgAAQAAAAAAAQACAA4AAQAAAAAAAgA=")
+
+[connection signal="body_entered" from="GameObjects/Torch" to="GameObjects/Torch" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/@Area2D@65714" to="GameObjects/@Area2D@65714" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/@Area2D@65715" to="GameObjects/@Area2D@65715" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/@Area2D@65716" to="GameObjects/@Area2D@65716" method="_on_body_entered"]
+[connection signal="body_entered" from="GameObjects/@Area2D@65717" to="GameObjects/@Area2D@65717" method="_on_body_entered"]

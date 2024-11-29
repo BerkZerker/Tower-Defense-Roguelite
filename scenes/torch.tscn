@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyj5a8a8s3sbt"]
+
+[ext_resource type="Script" path="res://scripts/torch.gd" id="1_qhn02"]
+[ext_resource type="Texture2D" uid="uid://ckr1ewqblq3kc" path="res://assets/textures/torch.png" id="2_ev6o0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4igwa"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_soi4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2f48g"]
+resource_name = "flicker"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvojs"]
+_data = {
+"RESET": SubResource("Animation_soi4w"),
+"flicker": SubResource("Animation_2f48g")
+}
+
+[node name="Torch" type="Area2D"]
+script = ExtResource("1_qhn02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4igwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ev6o0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kvojs")
+}
+autoplay = "flicker"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
