@@ -33,9 +33,7 @@ pointing/emulate_mouse_from_touch=false
 [physics]
 
 2d/run_on_separate_thread=true
-common/physics_ticks_per_second=15
-common/physics_jitter_fix=0.0
-common/physics_interpolation=true
+common/physics_ticks_per_second=30
 
 [rendering]
 

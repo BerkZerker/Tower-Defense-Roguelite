@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var spawn_timer: Timer = $Timer
 var enemy_scene := preload("res://scenes/enemy.tscn")
+var num_baddies : int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,3 +18,6 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
 	add_child(enemy)
+	num_baddies += 1
+	print(num_baddies)
+	
