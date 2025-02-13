@@ -1,10 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://pjda2eucvc68"]
 
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_dsjsh"]
+[ext_resource type="Script" path="res://scripts/entities/enemy.gd" id="1_dsjsh"]
 [ext_resource type="Texture2D" uid="uid://d301kbbv4nhsn" path="res://assets/textures/enemy.png" id="2_3wsqr"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aumyq"]
-bounce = 0.07
+[ext_resource type="Script" path="res://scripts/components/movement/navigation_movement.gd" id="2_q5r3v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q2f0y"]
 radius = 16.0
@@ -47,9 +45,9 @@ _data = {
 "move": SubResource("Animation_k8r6a")
 }
 
-[node name="Enemy" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_aumyq")
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_dsjsh")
+initial_target_pos = Vector2(1200, 500)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q2f0y")
@@ -66,3 +64,11 @@ autoplay = "move"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
+debug_enabled = true
+debug_path_custom_line_width = 3.0
+
+[node name="NavigationMovement" type="Node" parent="."]
+script = ExtResource("2_q5r3v")
+move_speed = 200.0
+acceleration = 1000.0
+deceleration = 2000.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bxoussnxjqida"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_04so4"]
+[ext_resource type="Script" path="res://scripts/core/level.gd" id="1_04so4"]
 [ext_resource type="Texture2D" uid="uid://cdlwufe0eroy3" path="res://assets/textures/grass-tile.png" id="1_ms2g6"]
 [ext_resource type="Texture2D" uid="uid://dj0821i5lb4ra" path="res://assets/textures/barrier-tile.png" id="2_p4yqe"]
 

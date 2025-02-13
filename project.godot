@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TDG"
-run/main_scene="res://scenes/game_instance.tscn"
+run/main_scene="res://scenes/core/game_instance.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/show_image=false
 config/icon="res://assets/textures/torch.png"
@@ -33,7 +33,6 @@ pointing/emulate_mouse_from_touch=false
 [physics]
 
 2d/run_on_separate_thread=true
-common/physics_ticks_per_second=30
 
 [rendering]
 

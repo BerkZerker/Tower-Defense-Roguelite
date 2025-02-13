@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dyj5a8a8s3sbt"]
 
-[ext_resource type="Script" path="res://scripts/torch.gd" id="1_qhn02"]
+[ext_resource type="Script" path="res://scripts/entities/torch.gd" id="1_qhn02"]
 [ext_resource type="Texture2D" uid="uid://ckr1ewqblq3kc" path="res://assets/textures/torch.png" id="2_ev6o0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4igwa"]

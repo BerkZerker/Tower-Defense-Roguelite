@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://c65kdfyp3q3vl"]
+[gd_scene load_steps=4 format=3 uid="uid://c65kdfyp3q3vl"]
 
-[ext_resource type="PackedScene" uid="uid://bxoussnxjqida" path="res://scenes/level.tscn" id="1_8beis"]
-[ext_resource type="PackedScene" uid="uid://0l2dqnmiyjw3" path="res://scenes/game_objects.tscn" id="2_5g1ck"]
+[ext_resource type="PackedScene" uid="uid://bxoussnxjqida" path="res://scenes/core/level.tscn" id="1_8beis"]
+[ext_resource type="PackedScene" uid="uid://0l2dqnmiyjw3" path="res://scenes/core/game_objects.tscn" id="2_5g1ck"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7mqgi"]
 vertices = PackedVector2Array(2447.91, 1095.95, 2442, 1095.93, 2442, 351.406, -10, -10, -10, 1086.04, -10.2031, 1086.03, -33.7813, -25.9531, 2439.07, -16.0313, 2439.13, -10, 522, 970, 1334, 1014, 330, 1014, 374, 970, 1226, 458, 1226, 374, 1334, 182, 2230, 330, 2230, 522, 2186, 458, 2186, 374, 2102, 330, 2102, 374, 330, 246, 374, 822, 566, 650, 630, 650, 630, 714, 522, 822, 694, 714, 694, 778, 758, 778, 758, 842, 1034, 650, 1226, 758, 778, 758, 778, 694, 950, 650, 714, 694, 714, 630, 650, 630, 650, 74, 1930, 630, 1930, 266, 1974, 266, 1974, 586, 1994, 630, 2186, 586, 2058, 246, 1994, 246, 1994, 118, 2038, 202, 1930, 118, 1930, 74, 2358, 74, 2358, 246, 2186, 246, 2186, 118, 2102, 202, 2314, 522, 2314, 330, 2358, 330, 2358, 630, 2038, 630, 2038, 758, 1974, 758, 1994, 714, 2186, 758, 2122, 758, 2122, 714, 2358, 714, 1034, 374, 1034, 182, 950, 182, 950, 374, 758, 374, 758, 458, 950, 458, 1034, 458, 246, 246, 246, 1014, 74, 1014, 74, 74, 566, 74, 1226, 842, 2102, 458, 2186, 502, 1846, 74, 1418, 182, 1846, 970, 1418, 1014, 2358, 1014, 2314, 970, 2314, 758, 2230, 758, 2230, 886, 2186, 842, 1930, 886, 1974, 842, 1930, 714, 2058, 502, 2038, 118)
@@ -11,7 +11,9 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-20, 1096, 2458, 1106, 
 [node name="World" type="Node2D"]
 
 [node name="Level" parent="." instance=ExtResource("1_8beis")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_7mqgi")
 
-[node name="GameObjects" parent="." instance=ExtResource("2_5g1ck")]
-tile_map_data = PackedByteArray("AAAjAAIAAQAAAAAAAQANAAQAAQAAAAAAAQARAAQAAQAAAAAAAQARAAgAAQAAAAAAAQANAAgAAQAAAAAAAQACAA4AAQAAAAAAAgA=")
+[node name="GameObjects" parent="NavigationRegion2D" instance=ExtResource("2_5g1ck")]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 14, 0, 1, 0, 0, 0, 0, 0, 2, 0, 7, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0)

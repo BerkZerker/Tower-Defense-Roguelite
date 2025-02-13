@@ -1,12 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://sivhouktyyou"]
 
-[ext_resource type="Script" path="res://scripts/enemy_spawn.gd" id="1_fmivr"]
+[ext_resource type="Script" path="res://scripts/entities/enemy_spawn.gd" id="1_u7b06"]
 
 [node name="EnemySpawn" type="Node2D"]
-script = ExtResource("1_fmivr")
+script = ExtResource("1_u7b06")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
 autostart = true
 
 [node name="Label" type="Label" parent="."]
