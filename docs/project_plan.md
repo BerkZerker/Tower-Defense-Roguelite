@@ -28,6 +28,10 @@
 ### High Priority (P0)
 - ~~Convert enemy to custom movement system~~ (Completed)
 - ~~Clean up temporary files~~ (Completed)
+- Implement fluid physics for enemy movement
+  - Add soft-body collision avoidance
+  - Implement group separation behavior
+  - Test and tune movement parameters
 - Fix scene references
 - Document core systems
 
@@ -122,13 +126,21 @@ Estimated time: 1-2 hours
    Progress: 100%
 
 2. **Phase 2: Enemy Refactor** (Weeks 1-2)
-    - ✓ Create movement component system
-    - ✓ Convert enemy to use custom physics
-    - ✓ Update enemy spawning system
-    - ✓ Test and validate movement behavior
-    Progress: 100%
+     - ✓ Create movement component system
+     - ✓ Convert enemy to use custom physics
+     - ✓ Update enemy spawning system
+     - ✓ Test and validate movement behavior
+     Progress: 100%
 
-3. **Phase 3: Documentation** (Week 2)
+3. **Phase 2.5: Enemy Movement Enhancement** (Week 2)
+     - Implement soft-body collision avoidance
+     - Add group separation forces
+     - Implement velocity-based movement adjustments
+     - Fine-tune clustering prevention parameters
+     - Test with various group sizes
+     Progress: 0%
+
+4. **Phase 3: Documentation** (Week 2-3)
    - Update README
    - Add API documentation
    - Document existing systems
@@ -180,11 +192,15 @@ Estimated time: 1-2 hours
 
 Based on TODO.txt, the following features are planned:
 1. ~~Convert enemy to use custom movement/physics system~~ (Completed)
-2. Nav mesh baking for random terrain
-3. Placeable defenders with roaming behavior
-4. Enemy targeting system
-5. Touch controls for pan & zoom
-6. Defender placement system
+2. Add fluid physics behavior for enemy clustering
+   - Implement soft-body collision avoidance
+   - Add velocity-based separation forces
+   - Fine-tune group movement parameters
+3. Nav mesh baking for random terrain
+4. Placeable defenders with roaming behavior
+5. Enemy targeting system
+6. Touch controls for pan & zoom
+7. Defender placement system
 
 The proposed structure accommodates these future features while maintaining clean organization. The new components/movement directory will specifically house the custom movement system for enemies and future defender units.
 
